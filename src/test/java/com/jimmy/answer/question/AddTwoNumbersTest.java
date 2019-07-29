@@ -1,6 +1,12 @@
 package com.jimmy.answer.question;
 
 
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.LinkedList;
+import java.util.Objects;
+
 public class AddTwoNumbersTest {
     @Test
     public void addTwoNumbers() {
@@ -14,11 +20,12 @@ public class AddTwoNumbersTest {
         linkedList2.add(6);
         linkedList2.add(4);
 
-        LetCodeTest test = new LetCodeTest();
+        AddTwoNumbers test = new AddTwoNumbers();
         LinkedList result = test.addTwoNumbers(linkedList, linkedList2);
         Assert.assertTrue(Objects.nonNull(result));
         Assert.assertEquals(result.size(), 3);
-        assertEquals(8, result.getFirst());
-        assertEquals(0, result.get(1));
-        assertEquals(7, result.getLast());
-    }}
+        Assert.assertEquals(8, result.getFirst());
+        Assert.assertEquals(0, result.get(1));
+        Assert.assertEquals(7, result.getLast());
+    }
+}
