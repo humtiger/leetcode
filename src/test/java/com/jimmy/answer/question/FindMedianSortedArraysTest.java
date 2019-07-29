@@ -7,6 +7,7 @@ public class FindMedianSortedArraysTest {
 
     private FindMedianSortedArrays leetCode = new FindMedianSortedArrays();
 
+    @Test
     public void diffLengthArray() {
 
         int[] longger = new int[]{1, 3};
@@ -14,6 +15,8 @@ public class FindMedianSortedArraysTest {
 
 
         double medianSortedArrays = leetCode.findMedianSortedArrays(longger, shorter);
+
+        Assert.assertEquals(0, Double.compare(2.0, medianSortedArrays));
     }
 
     @Test
@@ -23,7 +26,18 @@ public class FindMedianSortedArraysTest {
         int[] shorter = new int[]{3, 4};
 
         double medianSortedArrays = leetCode.findMedianSortedArrays(longger, shorter);
-        Assert.assertTrue(Double.compare(2.5, medianSortedArrays) == 0);
+        Assert.assertEquals(0, Double.compare(2.5, medianSortedArrays));
     }
 
+
+    @Test
+    public void givenTwoArray() {
+
+
+        int[] longger = new int[]{2, 4, 6, 8};
+        int[] shorter = new int[]{3, 4};
+
+        double medianSortedArrays = leetCode.findMedianSortedArrays(longger, shorter);
+        Assert.assertEquals(0, Double.compare(4, medianSortedArrays));
+    }
 }
