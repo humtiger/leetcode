@@ -3,7 +3,7 @@ package com.jimmy.answer.question;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Solution {
+public class LongestPalindrome {
     public String longestPalindrome(String s) {
 
         if (s.length() > 1000) {

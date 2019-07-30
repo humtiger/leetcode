@@ -5,13 +5,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import java.util.concurrent.Executors;
+public class LongestPalindromeTest {
 
-import static org.junit.Assert.*;
-
-public class SolutionTest {
-
-    private Solution solution = new Solution();
+    private LongestPalindrome solution = new LongestPalindrome();
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
