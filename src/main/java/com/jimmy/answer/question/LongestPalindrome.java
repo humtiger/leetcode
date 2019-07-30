@@ -22,11 +22,18 @@ public class LongestPalindrome {
         for (int i = 0; i < chars.length; i++) {
             int j = i + 1;
             for (; j < chars.length; j++) {
-                char[] copyOfRange = Arrays.copyOfRange(chars, i, j + 1);
-                if (isPalindromic(copyOfRange) && !Objects.equals(copyOfRange[0], copyOfRange[1])) {
-                    if (copyOfRange.length > maxSize) {
-                        result = copyOfRange;
-                        maxSize = copyOfRange.length;
+//                char[] copyOfRange = Arrays.copyOfRange(chars, i, j + 1);
+//                if (isPalindromic(copyOfRange)) {
+//                    if (copyOfRange.length > maxSize) {
+//                        result = copyOfRange;
+//                        maxSize = copyOfRange.length;
+//                    }
+//                }
+
+                if (isPalindromic(chars, i, j)) {
+                    if (j + 1 - i > maxSize) {
+                        result = Arrays.copyOfRange(chars, i, j + 1);
+                        maxSize = result.length;
                     }
                 }
             }
@@ -38,8 +45,19 @@ public class LongestPalindrome {
         return new String(result);
     }
 
+    private boolean isPalindromic(char[] chars, int start, int end) {
+        int half = (end + 1 - start) / 2;
+        for (int i = 0; i < half; i++) {
+            if (!Objects.equals(chars[start + i], chars[end - i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private boolean isPalindromic(char[] chars) {
-        for (int i = 0; i < chars.length / 2; i++) {
+        int half = chars.length / 2;
+        for (int i = 0; i < half; i++) {
             if (!Objects.equals(chars[i], chars[chars.length - i - 1])) {
                 return false;
             }

@@ -1,6 +1,5 @@
 package com.jimmy.answer.question;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 public class FindMedianSortedArrays {
