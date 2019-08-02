@@ -30,6 +30,9 @@ public class MyAtoi {
 
         for (char c : chars) {
             if (c == 32) {
+                if (!firstFlag) {
+                    break;
+                }
                 continue;
             }
 
@@ -55,12 +58,15 @@ public class MyAtoi {
         }
 
         int size = list.size();
+        if (size > 10) {
+            return nagative ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+        }
 
         long count = 0;
         long temp;
         int idx = 0;
         for (int i = size; i > 0; i--) {
-            temp = getInt(list.get(idx));
+            temp = list.get(idx) - 48;
             for (int j = 1; j < i; j++) {
                 temp = temp * 10;
             }
@@ -76,40 +82,6 @@ public class MyAtoi {
             return Integer.MIN_VALUE;
         }
         return (int) count;
-    }
-
-    private int getInt(char c) {
-        switch (c) {
-            case '0':
-                return 0;
-            case '1':
-                return 1;
-            case '2':
-                return 2;
-            case '3':
-                return 3;
-            case '4':
-                return 4;
-            case '5':
-                return 5;
-            case '6':
-                return 6;
-            case '7':
-                return 7;
-            case '8':
-                return 8;
-            case '9':
-                return 9;
-        }
-        throw new IllegalArgumentException();
-    }
-
-    class Number {
-        private char c;
-
-        public Number(char c) {
-            this.c = c;
-        }
     }
 
 }
