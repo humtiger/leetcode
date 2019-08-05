@@ -22,14 +22,6 @@ public class LongestPalindrome {
         for (int i = 0; i < chars.length; i++) {
             int j = i + 1;
             for (; j < chars.length; j++) {
-//                char[] copyOfRange = Arrays.copyOfRange(chars, i, j + 1);
-//                if (isPalindromic(copyOfRange)) {
-//                    if (copyOfRange.length > maxSize) {
-//                        result = copyOfRange;
-//                        maxSize = copyOfRange.length;
-//                    }
-//                }
-
                 if (isPalindromic(chars, i, j)) {
                     if (j + 1 - i > maxSize) {
                         result = Arrays.copyOfRange(chars, i, j + 1);
@@ -55,14 +47,6 @@ public class LongestPalindrome {
         return true;
     }
 
-    private boolean isPalindromic(char[] chars) {
-        int half = chars.length / 2;
-        for (int i = 0; i < half; i++) {
-            if (!Objects.equals(chars[i], chars[chars.length - i - 1])) {
-                return false;
-            }
-        }
-        return true;
-    }
+
 
 }
