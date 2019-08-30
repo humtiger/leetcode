@@ -1,9 +1,8 @@
 package com.jimmy.answer.question;
 
+import com.jimmy.answer.question10p.MaxArea;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MaxAreaTest {
 

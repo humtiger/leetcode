@@ -1,4 +1,4 @@
-package com.jimmy.answer.question;
+package com.jimmy.answer.question10p;
 
 /**
  * <h3>workspace</h3>
