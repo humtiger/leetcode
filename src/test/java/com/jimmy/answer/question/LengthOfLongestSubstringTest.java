@@ -3,8 +3,6 @@ package com.jimmy.answer.question;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class LengthOfLongestSubstringTest {
 
     private LengthOfLongestSubstring leetCode = new LengthOfLongestSubstring();
